@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Suchita Jain - CSE Student, Developer, AI & Open Source Enthusiast">
+  <title>Suchita Jain | Developer Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #0b1120;
+      color: #e5e7eb;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1f2937;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #9ca3af;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: #60a5fa;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: #9ca3af;
+      font-size: 1.05rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      transition: 0.3s;
+      background: #111827;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: #60a5fa;
+      color: #60a5fa;
+    }
+
+    .btn.primary {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #fff;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 45px;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #3b82f6;
+      margin: 12px auto 0;
+    }
+
+    .about-text {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 1.05rem;
+    }
+
+    .about-list {
+      max-width: 700px;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      list-style: none;
+    }
+
+    .about-list li {
+      background: #111827;
+      border: 1px solid #1f2937;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card,
+    .project-card,
+    .focus-card,
+    .goal-card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 14px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover,
+    .project-card:hover,
+    .focus-card:hover,
+    .goal-card:hover {
+      transform: translateY(-5px);
+      border-color: #374151;
+    }
+
+    .skill-card h3,
+    .project-card h3,
+    .focus-card h3,
+    .goal-card h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .skill-card p,
+    .project-card p,
+    .focus-card p,
+    .goal-card p {
+      color: #9ca3af;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card .tech {
+      margin-top: 15px;
+      color: #60a5fa;
+      font-size: 0.9rem;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .focus-card {
+      text-align: center;
+    }
+
+    .bar {
+      height: 7px;
+      background: #374151;
+      border-radius: 20px;
+      margin-top: 14px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: #3b82f6;
+      border-radius: inherit;
+    }
+
+    .learning-list,
+    .goals-list {
+      max-width: 750px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      list-style: none;
+    }
+
+    .learning-list li,
+    .goals-list li {
+      background: #111827;
+      border: 1px solid #1f2937;
+      padding: 15px 18px;
+      border-radius: 10px;
+    }
+
+    .coding-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .coding-link {
+      display: block;
+      padding: 22px;
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .coding-link:hover {
+      transform: translateY(-4px);
+      border-color: #60a5fa;
+    }
+
+    .coding-link strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .coding-link span {
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+
+    .connect {
+      text-align: center;
+    }
+
+    .connect p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #9ca3af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 0;
+      border-top: 1px solid #1f2937;
+      color: #6b7280;
+    }
+
+    footer strong {
+      color: #d1d5db;
+    }
+
+    @media (max-width: 850px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .coding-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .about-list,
+      .projects-grid,
+      .learning-list,
+      .goals-list,
+      .skills-grid,
+      .coding-links,
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="#home" class="logo">Suchita Jain</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#coding">Coding</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <h1>Hi, I'm Suchita Jain 👋</h1>
+        <h2>CSE Student | Developer | AI & Open Source Enthusiast 🚀</h2>
+        <p>
+          I'm a Computer Science Engineering student at ABES Engineering College,
+          passionate about building practical projects, exploring new technologies,
+          and continuously improving my problem-solving and development skills.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="https://github.com/suchitajain01" target="_blank" class="btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/suchitajain01" target="_blank" class="btn">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">👩‍💻 About Me</h2>
+
+        <p class="about-text">
+          I'm currently exploring Web Development, Python, AI, Open Source,
+          and Competitive Programming while building projects and learning by doing.
+        </p>
+
+        <ul class="about-list">
+          <li>🎓 CSE student at ABES Engineering College</li>
+          <li>💻 C++, Python, JavaScript, TypeScript & React</li>
+          <li>🌐 Interested in Web Development & AI</li>
+          <li>🧠 Practicing DSA & Problem Solving</li>
+          <li>🌱 Exploring Open Source</li>
+          <li>🚀 Building practical projects</li>
+          <li>🤝 Open to learning & collaboration</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">🛠️ Tech Stack</h2>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Languages</h3>
+            <p>C++ • Python • JavaScript • TypeScript</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <p>HTML • CSS • React • Tailwind CSS • Bootstrap</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Backend & Database</h3>
+            <p>Node.js • Express.js • MongoDB</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Tools</h3>
+            <p>Git • GitHub • VS Code</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">🚀 Featured Projects</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>🎵 Music Player Website</h3>
+            <p>Music player with an interactive and responsive UI.</p>
+            <div class="tech">HTML • CSS • JavaScript</div>
+          </article>
+
+          <article class="project-card">
+            <h3>🛒 Amazon Home Page</h3>
+            <p>Responsive e-commerce homepage inspired by Amazon.</p>
+            <div class="tech">HTML • CSS • JavaScript</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="coding">
+      <div class="container">
+        <h2 class="section-title">💻 Coding Profiles</h2>
+
+        <div class="coding-links">
+          <a class="coding-link" href="https://leetcode.com/u/suchitajain09_/" target="_blank">
+            <strong>🟨 LeetCode</strong>
+            <span>suchitajain09_</span>
+          </a>
+
+          <a class="coding-link" href="https://www.codechef.com/users/suchitajain011" target="_blank">
+            <strong>🟧 CodeChef</strong>
+            <span>suchitajain011</span>
+          </a>
+
+          <a class="coding-link" href="https://github.com/suchitajain01" target="_blank">
+            <strong>🐙 GitHub</strong>
+            <span>suchitajain01</span>
+          </a>
+
+          <a class="coding-link" href="https://www.linkedin.com/in/suchitajain01" target="_blank">
+            <strong>💼 LinkedIn</strong>
+            <span>Suchita Jain</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">📊 My Current Focus</h2>
+
+        <div class="focus-grid">
+          <div class="focus-card">
+            <h3>Problem Solving</h3>
+            <p>Learning & Improving</p>
+            <div class="bar"><span style="width:70%"></span></div>
+          </div>
+
+          <div class="focus-card">
+            <h3>Web Development</h3>
+            <p>Building Projects</p>
+            <div class="bar"><span style="width:80%"></span></div>
+          </div>
+
+          <div class="focus-card">
+            <h3>Python & AI</h3>
+            <p>Exploring</p>
+            <div class="bar"><span style="width:60%"></span></div>
+          </div>
+
+          <div class="focus-card">
+            <h3>Open Source</h3>
+            <p>Growing</p>
+            <div class="bar"><span style="width:50%"></span></div>
+          </div>
+
+          <div class="focus-card">
+            <h3>Git & GitHub</h3>
+            <p>Practicing</p>
+            <div class="bar"><span style="width:80%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">🌱 Currently Learning</h2>
+
+        <ul class="learning-list">
+          <li>Data Structures & Algorithms</li>
+          <li>Advanced JavaScript & React</li>
+          <li>Backend Development</li>
+          <li>Python & AI</li>
+          <li>Git & GitHub</li>
+          <li>Open Source Contribution</li>
+          <li>Building Real-World Projects</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">🎯 Goals</h2>
+
+        <div class="goal-card" style="max-width: 750px; margin: auto; text-align: center;">
+          <h3>Build. Learn. Contribute. Repeat.</h3>
+          <p>
+            Building meaningful projects, improving problem-solving skills,
+            contributing to open source, learning AI and modern development tools,
+            collaborating with developers, and turning ideas into useful products.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container connect">
+        <h2 class="section-title">🤝 Let's Connect</h2>
+
+        <p>
+          I'm always interested in connecting with fellow developers, students,
+          builders and open-source enthusiasts.
+        </p>
+
+        <div class="buttons">
+          <a href="https://github.com/suchitajain01" target="_blank" class="btn">🐙 GitHub</a>
+          <a href="https://www.linkedin.com/in/suchitajain01" target="_blank" class="btn">💼 LinkedIn</a>
+          <a href="https://leetcode.com/u/suchitajain09_/" target="_blank" class="btn">🟨 LeetCode</a>
+          <a href="https://www.codechef.com/users/suchitajain011" target="_blank" class="btn">🟧 CodeChef</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>⭐ Thanks for visiting my portfolio!</p>
+    <p><strong>Keep learning. Keep building. Keep growing. 🚀</strong></p>
+  </footer>
+
+</body>
+</html>
