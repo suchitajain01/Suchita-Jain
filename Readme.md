@@ -69,22 +69,6 @@ A frontend recreation of an Amazon-style e-commerce homepage focused on layout, 
 
 ---
 
-### 🎓 College Management System
-
-A feature-rich college management system built around the MERN ecosystem, covering different aspects of college management.
-
-**Tech:** React • TypeScript • Node.js • Express • MongoDB
-
----
-
-### 🌳 OrchardLease
-
-A full-stack project focused on connecting orchard owners and renters through orchard listings, search, booking and management features.
-
-**Tech:** React • Node.js • Express • MongoDB • Cloudinary
-
----
-
 ## 💻 Coding Profiles
 
 | Platform    | Profile                                                         |
